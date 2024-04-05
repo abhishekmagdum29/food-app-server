@@ -6,7 +6,7 @@ const app = express();
 
 app.use(cors());
 
-app.get("/api/swiggy", (req, res) => {
+app.get("/", (req, res) => {
   const url =
     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.694246&lng=74.245202&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
@@ -33,7 +33,7 @@ app.get("/api/swiggy", (req, res) => {
     });
 });
 
-app.get("/api/swiggy/restaurants", (req, res) => {
+app.get("/restaurants", (req, res) => {
   const { resId } = req.query;
   const url = `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=16.7049873&lng=74.24325270000001&restaurantId=${resId}`;
 
